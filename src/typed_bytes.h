@@ -47,12 +47,12 @@ class TypedBytes
     return bytes_val_len_;
   }
 
-  char * bytes_val() const {
+  const char * bytes_val() const {
     return (bytes_val_via_ == kViaRead ? read_bytes_val_ : set_bytes_val_);
   }
 
   // bytes mutator
-  void set_bytes_val(char bytes[], int len) {
+  void set_bytes_val(const char bytes[], int len) {
     type_ = kTypeBytes;
     set_bytes_val_ = bytes;
     bytes_val_len_ = len;
@@ -152,7 +152,7 @@ private:
   // length of bytes_val
   int bytes_val_len_;
   // set via set_bytes_val()
-  char *set_bytes_val_;
+  const char *set_bytes_val_;
   // set via Read()
   char *read_bytes_val_;
   

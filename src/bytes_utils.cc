@@ -18,10 +18,10 @@ char *BytesUtils::ReadBytes(std::istream &is,
 
 
 void BytesUtils::WriteBytes(std::ostream &os,
-                            char bytes[],
+                            const char bytes[],
                             int offset,
                             int len) {
-  char *outBuf = bytes + offset;
+  const char *outBuf = bytes + offset;
   os.write(outBuf, len);
 }
 

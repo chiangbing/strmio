@@ -107,8 +107,8 @@ bool TypedBytes::write(std::ostream &os) {
   os.put(type_);
   switch (type_) {
     case kTypeBytes: {
-      char *bytes_val = bytes_val_via_ == kViaRead ? read_bytes_val_
-                                                   : set_bytes_val_;
+      const char *bytes_val = bytes_val_via_ == \
+              kViaRead ? read_bytes_val_ : set_bytes_val_;
       BytesUtils::WriteInt(os, bytes_val_len_);
       BytesUtils::WriteBytes(os, bytes_val, 0, bytes_val_len_);
       break;

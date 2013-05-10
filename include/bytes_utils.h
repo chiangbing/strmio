@@ -19,7 +19,7 @@ class BytesUtils
 
   // Write bytes to os.
   static void WriteBytes(std::ostream &os,
-                         char bytes[],
+                         const char bytes[],
                          int offset,
                          int len);
 
